@@ -24,7 +24,7 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.56666666, 0.91),
+"times": PackedFloat32Array(0, 0.6, 0.91),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.9748671, 0), Vector3(0, -0.88413393, 0)]
@@ -36,10 +36,8 @@ _data = {
 &"new_animation": SubResource("Animation_0e6ga")
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_musvo"]
-
 [sub_resource type="Animation" id="Animation_wteok"]
-length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,47 +45,27 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6kuhx"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.91),
+"times": PackedFloat32Array(0, 0.23333335, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.9748671, 0), Vector3(0, -0.88413393, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-1.1436927, 0, 0), Vector3(1.2028601, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyjm6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_musvo"]
 _data = {
-&"RESET": SubResource("Animation_wteok"),
-&"new_animation": SubResource("Animation_6kuhx")
+&"another animation": SubResource("Animation_wteok")
 }
 
 [sub_resource type="SphereMesh" id="SphereMesh_6kuhx"]
 
 [node name="Demo" type="Node3D" unique_id=1471584126]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1863097990]
-libraries/ = SubResource("AnimationLibrary_wteok")
-libraries/asd = SubResource("AnimationLibrary_musvo")
+[node name="Duplicate this Player, Check the inspector" type="Node" parent="." unique_id=2115826915]
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1836231862]
-libraries/ = SubResource("AnimationLibrary_tyjm6")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Duplicate this Player, Check the inspector" unique_id=1863097990]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_wteok")
+"libraries/Library 2" = SubResource("AnimationLibrary_musvo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1135156053]
 mesh = SubResource("SphereMesh_6kuhx")
-
-[node name="Label" type="Label" parent="." unique_id=129989959]
-offset_right = 40.0
-offset_bottom = 23.0
