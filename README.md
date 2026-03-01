@@ -1,5 +1,9 @@
 # Unique Animation Libraries
 
+by danikakes
+
+Feel free to donate to my [Paypal]( https://www.paypal.com/donate/?business=WK8M59YJRAYAJ&no_recurring=0&currency_code=USD) if you like what I make :)
+
 Godot editor plugin that adds an `AnimationPlayer` inspector action for making embedded `AnimationLibrary` resources unique.
 
 This is useful when duplicated scenes or nodes still share built-in animation libraries and you want each copy to own its own editable animation data.
